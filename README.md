@@ -198,17 +198,17 @@ Empty cells are ignored in similarity calculation.
 
 ## 📈 Typical Dynamics
 
-### Phase 1: Initial Mixing (Steps 0-20)
+### Phase 1: Initial Mixing
 - Random placement
 - Many unhappy agents
 - High movement rate
 
-### Phase 2: Cluster Formation (Steps 20-100)
+### Phase 2: Cluster Formation
 - Agents find similar neighbors
 - Segregation increases
 - Movement slows
 
-### Phase 3: Equilibrium (Steps 100+)
+### Phase 3: Equilibrium 
 - Stable clusters
 - High happiness rate
 - Minimal movement
@@ -233,46 +233,6 @@ Critical thresholds where behavior changes dramatically:
 
 ---
 
-## Research Applications
-
-This model has been used to study:
-
-1. **Residential Segregation** (original application)
-2. **School Integration** (student mixing)
-3. **Workplace Diversity** (hiring dynamics)
-4. **Social Network Formation** (online communities)
-5. **Political Polarization** (opinion clustering)
-
----
-
-## 🛠️ Technical Details
-
-### Agent Class
-
-```python
-class Agent:
-    - x, y: position on grid
-    - agent_type: 1 (red) or 2 (blue)
-    - similarity_threshold: preference (0-1)
-    
-    Methods:
-    - is_happy(env): check satisfaction
-    - get_neighbor_positions(): return neighbors
-```
-
-### Environment Class
-
-```python
-class Environment:
-    - grid: 2D numpy array (0=empty, 1=red, 2=blue)
-    
-    Methods:
-    - get_empty_cells(): list vacant spots
-    - move_agent(agent, x, y): relocate agent
-    - count_neighbors(x, y): neighborhood composition
-```
-
----
 
 ## Testing
 
@@ -292,17 +252,4 @@ pytest tests/integration/
 pytest tests/ --cov
 ```
 
----
-
-## 📚 References
-
-### Original Work
-- **Schelling, T. C.** (1971). "Dynamic models of segregation." *Journal of Mathematical Sociology*, 1(2), 143-186.
-- **Schelling, T. C.** (1978). *Micromotives and Macrobehavior*. W.W. Norton.
-
-### Extensions
-- **Clark, W. A., & Fossett, M.** (2008). "Understanding the social context of the Schelling segregation model." *PNAS*, 105(11), 4109-4114.
-- **Hatna, E., & Benenson, I.** (2012). "The Schelling model of ethnic residential dynamics: Beyond the integrated - segregated dichotomy of patterns." *JASSS*, 15(1).
-
----
 **Built for teaching and research in computational social science** 🏘️
